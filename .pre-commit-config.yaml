@@ -1,0 +1,26 @@
+default_install_hook_types:
+- pre-commit
+- pre-push
+- commit-msg
+
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.0.1
+  hooks:
+  - name: Check, that no large files have been committed
+    id: check-added-large-files
+
+- repo: https://github.com/editorconfig-checker/editorconfig-checker.python
+  rev: '2.7.1'
+  hooks:
+  - name: Check EditorConfig
+    id: editorconfig-checker
+    alias: ec
+
+- repo: https://github.com/jorisroovers/gitlint
+  rev: "v0.19.1"
+  hooks:
+  - name: Lint commit messages
+    id: gitlint
+  - id: gitlint-ci
+    args: ['--commits', 'origin/main..HEAD']

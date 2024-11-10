@@ -1,0 +1,12 @@
+node_modules/
+dist/
+bin/
+obj/
+out/
+
+*.yaml
+*.yml
+*.md
+
+# Ignore generated SDKs
+src/sdk/

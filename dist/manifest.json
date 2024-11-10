@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "name": "Make LinkedIn great again",
+  "description": "Filter out nonsense LinkedIn posts from the timeline",
+  "action": {
+    "default_popup": "js/index.html",
+    "default_title": "Make LinkedIn great again"
+  },
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "contextMenus",
+    "scripting"
+  ]
+}
