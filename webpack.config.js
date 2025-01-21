@@ -9,10 +9,11 @@ const entryPoints = {
 
 module.exports = {
   entry: {
-    index: './src/index.tsx',
-    background: './src/background.ts'
+    background: './src/background.ts',
+    content: './src/content.ts'
   },
   mode: 'development',
+  devtool: 'cheap-module-source-map',
   module: {
     rules: [
       {
@@ -37,6 +38,12 @@ module.exports = {
   plugins: [
     new CopyPlugin({
       patterns: [{ from: 'manifest.json', to: '../manifest.json' }]
+    }),
+    new CopyPlugin({
+      patterns: [{ from: 'src/style.css', to: '../css/style.css' }]
+    }),
+    new CopyPlugin({
+      patterns: [{ from: 'src/index.html', to: '../index.html' }]
     }),
     ...getHtmlPlugins(['index'])
   ],

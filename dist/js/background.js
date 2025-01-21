@@ -1,1 +1,65 @@
-(()=>{"use strict";var e=function(){return e=Object.assign||function(e){for(var t,s=1,n=arguments.length;s<n;s++)for(var o in t=arguments[s])Object.prototype.hasOwnProperty.call(t,o)&&(e[o]=t[o]);return e},e.apply(this,arguments)};chrome.runtime.onInstalled.addListener((function(e){chrome.contextMenus.create({title:"Filter Useless Posts",id:"filter-useless-posts",contexts:["page","selection","link","editable","image","video","audio","browser_action"]}),console.log("Context menu created")})),chrome.contextMenus.onClicked.addListener((function(t){var s;console.log(t),"filter-useless-posts"===t.menuItemId&&(s=function(s){"filter-useless-posts"===t.menuItemId&&chrome.tabs.sendMessage(s.id,e({type:"filter-useless-posts"},t))},chrome.tabs.query({active:!0,currentWindow:!0},(function(e){var t=e[0];s(t)})))}))})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+/*!***************************!*\
+  !*** ./src/background.ts ***!
+  \***************************/
+__webpack_require__.r(__webpack_exports__);
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+// Install menu items to the context menu when the extension is installed
+chrome.runtime.onInstalled.addListener(function (message) {
+    // Clicking this item will send an event to the content script listening to messages
+    chrome.contextMenus.create({
+        title: 'Disable Posts Filter',
+        id: 'disable-filter',
+        contexts: ['page', 'selection', 'link', 'editable', 'image', 'video', 'audio', 'browser_action']
+    });
+});
+function getActiveTab(callback) {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        var activeTab = tabs[0];
+        callback(activeTab);
+    });
+}
+// When a context menu item is clicked
+chrome.contextMenus.onClicked.addListener(function (info) {
+    console.log(info);
+    if (info.menuItemId === 'disable-filter') {
+        getActiveTab(function (tab) {
+            if (info.menuItemId === 'disable-filter') {
+                chrome.tabs.sendMessage(tab.id, __assign({ type: 'disable-filter' }, info));
+            }
+        });
+    }
+});
+
+
+/******/ })()
+;
+//# sourceMappingURL=background.js.map

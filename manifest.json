@@ -4,7 +4,7 @@
   "name": "Make LinkedIn great again",
   "description": "Filter out nonsense LinkedIn posts from the timeline",
   "action": {
-    "default_popup": "js/index.html",
+    "default_popup": "index.html",
     "default_title": "Make LinkedIn great again"
   },
   "background": {
@@ -15,5 +15,18 @@
     "tabs",
     "contextMenus",
     "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.linkedin.com/*"
+      ],
+      "js": [
+        "js/content.js"
+      ],
+      "css": [
+        "css/style.css"
+      ]
+    }
   ]
 }

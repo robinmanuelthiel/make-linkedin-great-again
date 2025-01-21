@@ -1,0 +1,7 @@
+.filtered-post-opaque {
+  opacity: 0.25;
+}
+
+.filtered-post-hidden {
+  display: none !important;
+}
