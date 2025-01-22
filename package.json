@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
     "@types/chrome": "^0.0.280",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.119",
@@ -18,15 +15,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "watch": "webpack -w --config webpack.config.js",
-    "test": "react-scripts test"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "copy-files": "copyfiles -u 1 src/**/*.html src/**/*.css dist/",
+    "build": "tsc --build && npm run copy-files",
+    "watch": "tsc --watch",
+    "clean": "tsc --build --clean"
   },
   "browserslist": {
     "production": [
@@ -41,12 +33,7 @@
     ]
   },
   "devDependencies": {
-    "copy-webpack-plugin": "^12.0.2",
-    "css-loader": "^7.1.2",
-    "html-webpack-plugin": "^5.6.3",
-    "ts-loader": "^9.5.1",
-    "ts-node": "^10.9.2",
-    "webpack": "^5.96.1",
-    "webpack-cli": "^5.1.4"
+    "copyfiles": "^2.4.1",
+    "tsc-watch": "^6.2.1"
   }
 }
