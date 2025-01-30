@@ -155,5 +155,3 @@ filterPosts();
 
 // Filter posts on scroll
 document.addEventListener('scroll', filterPosts);
-
-export {};
