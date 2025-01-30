@@ -3,7 +3,6 @@ chrome.storage.local.get(['bannedWords', 'replacementText'], (data) => {
   const bannedInput = document.getElementById('bannedWords') as HTMLInputElement;
   const replacementInput = document.getElementById('replacementText') as HTMLInputElement;
   const defaultBannedWords = ['elon', 'musk', 'trump', 'biden', 'israel', 'putin', 'afd', 'weidel'];
-  
   bannedInput.value = data.bannedWords?.join(', ') || defaultBannedWords.join(', ');
   replacementInput.value = data.replacementText || '💩 Bullshit';
 });
