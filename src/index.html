@@ -1,9 +1,63 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      body {
+        width: 300px;
+        padding: 16px;
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+      .field {
+        margin-bottom: 16px;
+      }
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+      }
+      input, textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      textarea {
+        height: 80px;
+        resize: vertical;
+      }
+      button {
+        width: 100%;
+        padding: 8px;
+        background: #0a66c2;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #004182;
+      }
+      .status {
+        display: none;
+        margin-top: 8px;
+        text-align: center;
+        color: #0a66c2;
+      }
+    </style>
+  </head>
   <body>
-    <h1>Hello World</h1>
-    <button id="hello-world">Hello World</button>
+    <div class="field">
+      <label for="bannedWords">Banned words</label>
+      <textarea id="bannedWords" placeholder="Enter words separated by commas"></textarea>
+    </div>
+    <div class="field">
+      <label for="replacementText">Replacement text</label>
+      <input type="text" id="replacementText" placeholder="Text to show for filtered posts">
+    </div>
+    <button id="saveConfig">Save Configuration</button>
+    <div id="status" class="status">Configuration saved!</div>
     <script src="script.js"></script>
   </body>
 </html>
