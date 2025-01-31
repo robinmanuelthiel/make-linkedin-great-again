@@ -14,7 +14,8 @@
     "activeTab",
     "tabs",
     "contextMenus",
-    "scripting"
+    "scripting",
+    "storage"
   ],
   "content_scripts": [
     {
