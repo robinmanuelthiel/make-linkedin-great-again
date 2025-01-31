@@ -1,5 +1,5 @@
-const POST_REPLACEMENT_TEXT = '💩 Bullshit';
-const BANNED_WORDS = ['elon', 'musk', 'trump', 'biden', 'israel', 'putin', 'afd', 'weidel'];
+let POST_REPLACEMENT_TEXT = '💩 Bullshit';
+let BANNED_WORDS = ['elon', 'musk', 'trump', 'biden', 'israel', 'putin', 'afd', 'weidel'];
 const BANNED_POST_CLASSES = ['celebration', 'announcement'];
 
 function filterPosts() {
@@ -143,6 +143,15 @@ chrome.runtime.onMessage.addListener(action => {
     case 'disable-filter': {
       unfilterPosts();
       document.removeEventListener('scroll', filterPosts);
+      break;
+    }
+    case 'config-changed': {
+      chrome.storage.sync.get(['bannedWords', 'replacementText'], result => {
+        BANNED_WORDS = result.bannedWords || BANNED_WORDS;
+        POST_REPLACEMENT_TEXT = result.replacementText || POST_REPLACEMENT_TEXT;
+        unfilterPosts();
+        filterPosts();
+      });
       break;
     }
     default:
