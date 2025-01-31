@@ -30,7 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const replacementTextInput = document.getElementById('replacement-text') as HTMLInputElement;
 
   chrome.storage.sync.get(['bannedWords', 'replacementText'], result => {
-    bannedWordsInput.value = result.bannedWords ? result.bannedWords.join(', ') : 'elon, musk, trump, biden, israel, putin, afd, weidel';
+    bannedWordsInput.value = result.bannedWords
+      ? result.bannedWords.join(', ')
+      : 'elon, musk, trump, biden, israel, putin, afd, weidel';
     replacementTextInput.value = result.replacementText || '💩 Bullshit';
   });
 });
