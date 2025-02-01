@@ -112,12 +112,14 @@ function hide(post: HTMLElement) {
   }
 }
 
-function unhide(post: HTMLElement) {
+function unhide(post: HTMLElement, preventHide: boolean = true) {
   // Remove classes from post itself
   post.classList.remove('filtered-post-opaque', 'filtered-post-hidden');
 
-  // Add exception class to post to not be hidden again on next scroll
-  post.classList.add('filtered-post-exception');
+  if (preventHide) {
+    // Add exception class to post to not be hidden again on next scroll
+    post.classList.add('filtered-post-exception');
+  }
 
   // Remove classes from all descendants recursively
   const allDescendants = post.getElementsByTagName('*');
@@ -136,7 +138,7 @@ function unhide(post: HTMLElement) {
 function unfilterPosts() {
   const posts = getAllPosts();
   Array.from(posts).forEach(post => {
-    unhide(post as HTMLElement);
+    unhide(post as HTMLElement, false);
   });
 }
 
