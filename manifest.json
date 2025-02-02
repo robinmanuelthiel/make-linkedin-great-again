@@ -1,20 +1,24 @@
 {
   "version": "1.0.0",
   "manifest_version": 3,
-  "name": "Make LinkedIn great again",
-  "description": "Filter out nonsense LinkedIn posts from the timeline",
+  "name": "Make LinkedIn Great Again",
+  "description": "Filter unwanted posts from your timeline",
   "action": {
     "default_popup": "index.html",
-    "default_title": "Make LinkedIn great again"
-  },
-  "background": {
-    "service_worker": "background.js"
+    "default_title": "Make LinkedIn Great Again",
+    "default_icon": {
+      "16": "assets/icon@16w.png",
+      "32": "assets/icon@32w.png",
+      "48": "assets/icon@48w.png",
+      "128": "assets/icon@128w.png"
+    }
   },
   "permissions": [
     "activeTab",
     "tabs",
     "contextMenus",
-    "scripting"
+    "scripting",
+    "storage"
   ],
   "content_scripts": [
     {
