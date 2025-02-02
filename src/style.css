@@ -5,3 +5,129 @@
 .filtered-post-hidden {
   display: none !important;
 }
+
+/* Configuration UI styles */
+:root {
+  --primary-color: #2d64bc;
+  --text-color: #333;
+  --border-color: #e0e0e0;
+  --background-color: #f4f2ee;
+  --status-background-color: #363636;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  background: var(--background-color);
+  min-width: 320px;
+}
+
+.container {
+  padding: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 16px;
+  color: var(--primary-color);
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-size: 14px;
+  margin: 0 0 8px 0;
+}
+
+.description {
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 8px 0;
+}
+
+.settings-group {
+  margin-bottom: 24px;
+}
+
+textarea,
+input[type='text'] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+  font-family: inherit;
+  resize: vertical;
+}
+
+textarea:focus,
+input[type='text']:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  padding-bottom: 4px;
+  border-radius: 4px;
+}
+
+input[type='radio'] {
+  margin: 0;
+}
+
+.status {
+  display: none;
+  font-size: 13px;
+  color: #ffffff;
+  text-align: center;
+  position: fixed;
+  background: var(--status-background-color);
+  bottom: 10px;
+  padding: 8px;
+  left: 16px;
+  right: 16px;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  padding-bottom: 4px;
+  border-radius: 4px;
+}
+
+#postTypeOptions {
+  margin-left: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+input[type='checkbox'] {
+  margin: 0;
+}

@@ -1,9 +1,69 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Make LinkedIn Great Again - Settings</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
   <body>
-    <h1>Hello World</h1>
-    <button id="hello-world">Hello World</button>
-    <script src="script.js"></script>
+    <div class="container">
+      <div class="header">
+        <img src="assets/icon@48w.png" height="40" width="40" alt="Make LinkedIn Great Again" />
+        <div>
+          <h1>Make LinkedIn Great Again</h1>
+          <span>Filter unwanted posts from your timeline</span>
+        </div>
+      </div>
+
+      <div class="settings-group">
+        <h2>Banned Words</h2>
+        <p class="description">Posts containing these words will be filtered out. Enter one per line.</p>
+        <textarea id="bannedWords" rows="4" placeholder="Enter words or phrases, one per line"></textarea>
+      </div>
+
+      <div class="settings-group">
+        <h2>Replacement Text</h2>
+        <p class="description">Text shown for filtered posts.</p>
+        <input type="text" id="replacementText" placeholder="This post has been filtered..." />
+      </div>
+
+      <div class="settings-group">
+        <h2>Post Types to Filter</h2>
+        <p class="description">Select which types of posts you want to additionally filter out.</p>
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" name="bannedPostClasses" value="celebration" checked />
+            Celebrations
+            <!-- (job changes, work anniversaries) -->
+          </label>
+          <label>
+            <input type="checkbox" name="bannedPostClasses" value="announcement" checked />
+            Announcements
+          </label>
+        </div>
+      </div>
+
+      <div class="settings-group">
+        <h2>Filter Mode</h2>
+        <p class="description">Choose, what should happen to posts that are filtered out.</p>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="filterMode" value="hide" checked />
+            Hide posts completely
+          </label>
+          <label>
+            <input type="radio" name="filterMode" value="fade" />
+            Fade out posts
+          </label>
+          <label>
+            <input type="radio" name="filterMode" value="none" />
+            Don't filter
+          </label>
+        </div>
+      </div>
+
+      <div class="status" id="status">Demo Status</div>
+    </div>
+    <script type="module" src="script.js"></script>
   </body>
 </html>

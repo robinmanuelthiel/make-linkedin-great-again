@@ -1,6 +1,14 @@
-const POST_REPLACEMENT_TEXT = '💩 Bullshit';
-const BANNED_WORDS = ['elon', 'musk', 'trump', 'biden', 'israel', 'putin', 'afd', 'weidel'];
-const BANNED_POST_CLASSES = ['celebration', 'announcement'];
+import { Configuration, DEFAULT_CONFIG } from './types';
+
+let currentConfig: Configuration = DEFAULT_CONFIG;
+
+// Load initial configuration
+chrome.storage.sync.get('config', result => {
+  if (result.config) {
+    currentConfig = result.config;
+    filterPosts();
+  }
+});
 
 function filterPosts() {
   const posts = getAllPosts();
@@ -23,7 +31,7 @@ function filterPosts() {
 
     // Check if the post contains any banned words
     if (
-      BANNED_WORDS.some(word => {
+      currentConfig.bannedWords.some(word => {
         // Only match words that are not part of a larger word and surrounded by a whitespace in before or after
         const pattern = new RegExp(`(^|\\s)${word}(\\s|$)`, 'i');
         return pattern.test(postText);
@@ -34,7 +42,7 @@ function filterPosts() {
 
     // Check if the post contains any banned post classes
     if (
-      BANNED_POST_CLASSES.some(type => {
+      currentConfig.bannedPostClasses.some(type => {
         const elements = post.querySelectorAll(`[class*="${type}"]`);
         return elements.length > 0;
       })
@@ -45,7 +53,15 @@ function filterPosts() {
 }
 
 function hide(post: HTMLElement) {
-  post.classList.add('filtered-post-opaque');
+  if (currentConfig.filterMode === 'none') {
+    return; // Don't apply any filtering
+  }
+
+  if (currentConfig.filterMode === 'fade') {
+    post.classList.add('filtered-post-opaque');
+  } else {
+    post.classList.add('filtered-post-hidden');
+  }
 
   // Hide all relevant children
   const updateDiv = post.querySelector('.update-components-text');
@@ -79,14 +95,14 @@ function hide(post: HTMLElement) {
     (social as HTMLElement).classList.add('filtered-post-hidden');
   });
 
-  // Add bullshit span
+  // Add replacement text
   const replacementDiv = document.createElement('div');
   replacementDiv.classList.add('filtered-post-replacement-container');
   replacementDiv.style.paddingBottom = '10px';
 
   const replacementText = document.createElement('span');
   replacementText.classList.add('filtered-post-replacement-text');
-  replacementText.textContent = POST_REPLACEMENT_TEXT;
+  replacementText.textContent = currentConfig.replacementText;
   replacementText.className = 'bullshit';
 
   const showButton = document.createElement('a');
@@ -105,12 +121,14 @@ function hide(post: HTMLElement) {
   }
 }
 
-function unhide(post: HTMLElement) {
+function unhide(post: HTMLElement, preventHide: boolean = true) {
   // Remove classes from post itself
   post.classList.remove('filtered-post-opaque', 'filtered-post-hidden');
 
-  // Add exception class to post to not be hidden again on next scroll
-  post.classList.add('filtered-post-exception');
+  if (preventHide) {
+    // Add exception class to post to not be hidden again on next scroll
+    post.classList.add('filtered-post-exception');
+  }
 
   // Remove classes from all descendants recursively
   const allDescendants = post.getElementsByTagName('*');
@@ -129,7 +147,7 @@ function unhide(post: HTMLElement) {
 function unfilterPosts() {
   const posts = getAllPosts();
   Array.from(posts).forEach(post => {
-    unhide(post as HTMLElement);
+    unhide(post as HTMLElement, false);
   });
 }
 
@@ -138,8 +156,14 @@ function getAllPosts(): HTMLElement[] {
   return Array.from(posts) as HTMLElement[];
 }
 
-chrome.runtime.onMessage.addListener(action => {
-  switch (action.type) {
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  switch (message.type) {
+    case 'CONFIG_UPDATED': {
+      currentConfig = message.config;
+      unfilterPosts(); // Clear existing filters
+      filterPosts(); // Reapply with new config
+      break;
+    }
     case 'disable-filter': {
       unfilterPosts();
       document.removeEventListener('scroll', filterPosts);
