@@ -1,15 +1,5 @@
 import { Configuration, DEFAULT_CONFIG } from './types';
 
-document.getElementById('hello-world')?.addEventListener('click', onHelloWorldClick);
-
-function onHelloWorldClick() {
-  // Update button text
-  const button = document.getElementById('hello-world');
-  if (button) {
-    button.textContent = 'Clicked!';
-  }
-}
-
 // DOM Elements
 const bannedWordsTextarea = document.getElementById('bannedWords') as HTMLTextAreaElement;
 const replacementTextInput = document.getElementById('replacementText') as HTMLInputElement;
