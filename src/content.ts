@@ -31,9 +31,11 @@ function filterPosts() {
 
     // Check if the post contains any banned words
     if (
+      // Only match words that are not part of a larger word and surrounded by a whitespace or beginning/end of string in before or after
+      // Also allow punctuation marks as word boundaries at the end of the word
       currentConfig.bannedWords.some(word => {
-        // Only match words that are not part of a larger word and surrounded by a whitespace in before or after
-        const pattern = new RegExp(`(^|\\s)${word}(\\s|$)`, 'i');
+        // Updated pattern to include punctuation marks as word boundaries
+        const pattern = new RegExp(`(^|\\s)${word}(\\s|$|[\\s.,!?;]|\\W)`, 'i');
         return pattern.test(postText);
       })
     ) {
