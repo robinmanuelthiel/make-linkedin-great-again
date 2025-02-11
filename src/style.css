@@ -131,3 +131,12 @@ input[type='radio'] {
 input[type='checkbox'] {
   margin: 0;
 }
+
+#sponsoring {
+  text-align: center;
+  padding-top: 1em;
+}
+
+hr {
+  opacity: 0.3;
+}

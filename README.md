@@ -1,6 +1,7 @@
-# ![Make LinkedIn great again](src/assets/icon@32w.png) Make LinkedIn great again
+![Make LinkedIn great again](media/Banner.png)
 
 A Browser extension to filter out nonsense LinkedIn posts from the timeline.
+
 
 ![Screenshot](media/screenshot-1.png)
 
