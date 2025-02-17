@@ -20,14 +20,14 @@ function filterPosts() {
 
     // Get the post text only from spans within update-components-text div
     let postText = '';
-    const updateDiv = post.querySelector('.update-components-text');
-    if (updateDiv) {
+    const updateDivs = post.querySelectorAll('.update-components-text');
+    updateDivs.forEach(updateDiv => {
       const spans = updateDiv.querySelectorAll('span');
-      postText = Array.from(spans)
+      postText += Array.from(spans)
         .map(span => span.textContent || '')
         .join(' ')
         .toLowerCase();
-    }
+    });
 
     // Check if the post contains any banned words
     if (
@@ -65,15 +65,10 @@ function hide(post: HTMLElement) {
     post.classList.add('filtered-post-hidden');
   }
 
-  // Hide all relevant children
-  const updateDiv = post.querySelector('.update-components-text');
-  if (updateDiv) {
-    const children = (updateDiv as HTMLElement).children;
-    Array.from(children).forEach(child => {
-      if (!(child as HTMLElement).className.includes('filtered-post-replacement')) {
-        (child as HTMLElement).classList.add('filtered-post-hidden');
-      }
-    });
+  // Hide post text
+  const textDiv = post.querySelector('.update-components-text');
+  if (textDiv) {
+    (textDiv as HTMLElement).classList.add('filtered-post-hidden');
   }
 
   // Hide see more button
@@ -91,6 +86,12 @@ function hide(post: HTMLElement) {
     (updateDiv as HTMLElement).classList.add('filtered-post-hidden');
   });
 
+  // Hide shared content if any. Update content has a class that 'update-content-wrapper' in its name
+  const sharedContent = post.querySelector('[class*="update-content-wrapper"]');
+  if (sharedContent) {
+    (sharedContent as HTMLElement).classList.add('filtered-post-hidden');
+  }
+
   // Hide socials like likes, comments, etc.
   const socials = post.querySelectorAll('.update-v2-social-activity');
   Array.from(socials).forEach(social => {
@@ -100,7 +101,11 @@ function hide(post: HTMLElement) {
   // Add replacement text
   const replacementDiv = document.createElement('div');
   replacementDiv.classList.add('filtered-post-replacement-container');
-  replacementDiv.style.paddingBottom = '10px';
+  replacementDiv.style.paddingBottom = '.5em';
+  replacementDiv.style.textAlign = 'center';
+  replacementDiv.style.borderTop = '1px solid rgb(0 0 0 / 15%)';
+  replacementDiv.style.fontSize = '90%';
+  replacementDiv.style.paddingTop = '.5em';
 
   const replacementText = document.createElement('span');
   replacementText.classList.add('filtered-post-replacement-text');
@@ -118,8 +123,10 @@ function hide(post: HTMLElement) {
 
   replacementDiv.appendChild(replacementText);
   replacementDiv.appendChild(showButton);
-  if (!(updateDiv as HTMLElement).querySelector('.filtered-post-replacement-container')) {
-    (updateDiv as HTMLElement).appendChild(replacementDiv);
+
+  const impressionContainer = post.querySelector('.fie-impression-container');
+  if (!(impressionContainer as HTMLElement).querySelector('.filtered-post-replacement-container')) {
+    (impressionContainer as HTMLElement).appendChild(replacementDiv);
   }
 }
 
