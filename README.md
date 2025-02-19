@@ -2,9 +2,6 @@
 
 A Browser extension to filter out nonsense LinkedIn posts from the timeline.
 
-
-![Screenshot](media/screenshot-1.png)
-
 ## Get it running
 
 ```bash
@@ -24,3 +21,7 @@ Once the build is complete, you can load the extension into Chrome.
 ```bash
 npm run watch
 ```
+
+## Preview
+
+![Screenshot](media/Screenshot-1.png)
