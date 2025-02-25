@@ -101,11 +101,10 @@ function hide(post: HTMLElement) {
   // Add replacement text
   const replacementDiv = document.createElement('div');
   replacementDiv.classList.add('filtered-post-replacement-container');
-  replacementDiv.style.paddingBottom = '.5em';
+  replacementDiv.style.padding = '.5em';
   replacementDiv.style.textAlign = 'center';
   replacementDiv.style.borderTop = '1px solid rgb(0 0 0 / 15%)';
   replacementDiv.style.fontSize = '90%';
-  replacementDiv.style.paddingTop = '.5em';
 
   const replacementText = document.createElement('span');
   replacementText.classList.add('filtered-post-replacement-text');
@@ -161,7 +160,7 @@ function unfilterPosts() {
 }
 
 function getAllPosts(): HTMLElement[] {
-  const posts = document.querySelectorAll('div[data-id^="urn:li:activity:"]');
+  const posts = document.querySelectorAll('div[data-urn^="urn:li:activity:"]');
   return Array.from(posts) as HTMLElement[];
 }
 
