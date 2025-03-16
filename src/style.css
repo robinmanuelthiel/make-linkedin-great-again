@@ -140,3 +140,11 @@ input[type='checkbox'] {
 hr {
   opacity: 0.3;
 }
+
+#emojiReplacement {
+  width: 30px;
+  border: none;
+  text-align: center;
+  font-size: 85%;
+  height: 1em;
+}

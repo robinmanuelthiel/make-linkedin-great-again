@@ -8,6 +8,7 @@ const bannedPostClassesCheckboxes = document.querySelectorAll(
   'input[name="bannedPostClasses"]'
 ) as NodeListOf<HTMLInputElement>;
 const statusElement = document.getElementById('status') as HTMLDivElement;
+const emojiReplacementInput = document.getElementById('emojiReplacement') as HTMLInputElement;
 
 // Load configuration on popup open
 document.addEventListener('DOMContentLoaded', async () => {
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 // Save configuration when inputs change
 bannedWordsTextarea.addEventListener('input', debounce(saveConfiguration, 500));
 replacementTextInput.addEventListener('input', debounce(saveConfiguration, 500));
+emojiReplacementInput.addEventListener('input', debounce(saveConfiguration, 500));
 filterModeInputs.forEach(input => {
   input.addEventListener('change', saveConfiguration);
 });
@@ -38,10 +40,13 @@ async function saveConfiguration() {
     replacementText: replacementTextInput.value,
     filterMode: (document.querySelector('input[name="filterMode"]:checked') as HTMLInputElement).value as
       | 'hide'
-      | 'fade',
+      | 'fade'
+      | 'none'
+      | 'emoji',
     bannedPostClasses: Array.from(bannedPostClassesCheckboxes)
       .filter(checkbox => checkbox.checked)
-      .map(checkbox => checkbox.value)
+      .map(checkbox => checkbox.value),
+    emojiReplacement: (document.getElementById('emojiReplacement') as HTMLInputElement).value || 'x'
   };
 
   await chrome.storage.sync.set({ config });
@@ -70,6 +75,12 @@ function updateUI(config: Configuration) {
   bannedPostClassesCheckboxes.forEach(checkbox => {
     checkbox.checked = config.bannedPostClasses.includes(checkbox.value);
   });
+
+  // Update emoji replacement input
+  const emojiReplacementInput = document.getElementById('emojiReplacement') as HTMLInputElement;
+  if (emojiReplacementInput) {
+    emojiReplacementInput.value = config.emojiReplacement || '🐓';
+  }
 }
 
 // Show status message

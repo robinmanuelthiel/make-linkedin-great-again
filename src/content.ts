@@ -11,6 +11,7 @@ chrome.storage.sync.get('config', result => {
 });
 
 function filterPosts() {
+  console.log('Filtering posts with config:', currentConfig); // Debug log
   const posts = getAllPosts();
   posts.forEach(post => {
     // Skip posts that have been hidden before
@@ -35,7 +36,7 @@ function filterPosts() {
       // Also allow punctuation marks as word boundaries at the end of the word
       currentConfig.bannedWords.some(word => {
         // Updated pattern to include punctuation marks as word boundaries
-        const pattern = new RegExp(`(^|\\s)${word}(\\s|$|[\\s.,!?;]|\\W)`, 'i');
+        const pattern = new RegExp(`(^|\\s|["'])${word}(\\s|$|[\\s.,!?;]|\\W)`, 'i');
         return pattern.test(postText);
       })
     ) {
@@ -61,8 +62,11 @@ function hide(post: HTMLElement) {
 
   if (currentConfig.filterMode === 'fade') {
     post.classList.add('filtered-post-opaque');
-  } else {
+  } else if (currentConfig.filterMode === 'hide') {
     post.classList.add('filtered-post-hidden');
+  } else if (currentConfig.filterMode === 'emoji') {
+    replaceWithEmoji(post);
+    return; // Don't hide the post, just replace words
   }
 
   // Hide post text
@@ -126,6 +130,24 @@ function hide(post: HTMLElement) {
   const impressionContainer = post.querySelector('.fie-impression-container');
   if (!(impressionContainer as HTMLElement).querySelector('.filtered-post-replacement-container')) {
     (impressionContainer as HTMLElement).appendChild(replacementDiv);
+  }
+}
+
+function replaceWithEmoji(post: HTMLElement) {
+  const textDiv = post.querySelector('.update-components-text');
+  if (textDiv) {
+    const spans = textDiv.querySelectorAll('span');
+    spans.forEach(span => {
+      currentConfig.bannedWords.forEach(word => {
+        const pattern = new RegExp(`(^|\\s)${word}(\\s|$|[\\s.,!?;]|\\W)`, 'gi');
+        // Replace only the plain text within the span or within child-elements of the span
+        Array.from(span.childNodes).forEach(node => {
+          if (node.nodeType === Node.TEXT_NODE) {
+            node.textContent = (node.textContent || '').replace(pattern, ` ${currentConfig.emojiReplacement} `);
+          }
+        });
+      });
+    });
   }
 }
 
