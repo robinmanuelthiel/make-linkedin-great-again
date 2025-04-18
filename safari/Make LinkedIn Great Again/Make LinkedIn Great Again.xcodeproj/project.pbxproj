@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		78416EC62D86F49D00EE3E32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78416EC52D86F49D00EE3E32 /* AppDelegate.swift */; };
 		78416EC92D86F49D00EE3E32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78416EC72D86F49D00EE3E32 /* Main.storyboard */; };
-		78416EDB2D86F49D00EE3E32 /* Make LinkedIn Great Again Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 78416EDA2D86F49D00EE3E32 /* Make LinkedIn Great Again Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		78416EDB2D86F49D00EE3E32 /* Make Social Media Great Again Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 78416EDA2D86F49D00EE3E32 /* Make Social Media Great Again Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		78416EE22D86F49D00EE3E32 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 78416EA42D86F49C00EE3E32 /* Main.html */; };
 		78416EE42D86F49D00EE3E32 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78416EA62D86F49C00EE3E32 /* Icon.png */; };
 		78416EE62D86F49D00EE3E32 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 78416EA72D86F49C00EE3E32 /* Style.css */; };
@@ -31,7 +31,7 @@
 			containerPortal = 78416E9E2D86F49C00EE3E32 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 78416ED92D86F49D00EE3E32;
-			remoteInfo = "Make LinkedIn Great Again Extension (macOS)";
+			remoteInfo = "Make Social Media Great Again Extension (macOS)";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -42,7 +42,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				78416EDB2D86F49D00EE3E32 /* Make LinkedIn Great Again Extension.appex in Embed Foundation Extensions */,
+				78416EDB2D86F49D00EE3E32 /* Make Social Media Great Again Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,15 +62,15 @@
 		78416EB92D86F49D00EE3E32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78416EBC2D86F49D00EE3E32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78416EBE2D86F49D00EE3E32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		78416EC32D86F49D00EE3E32 /* Make LinkedIn Great Again.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Make LinkedIn Great Again.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78416EC32D86F49D00EE3E32 /* Make Social Media Great Again.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Make Social Media Great Again.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78416EC52D86F49D00EE3E32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78416EC82D86F49D00EE3E32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78416ECA2D86F49D00EE3E32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		78416ECB2D86F49D00EE3E32 /* Make LinkedIn Great Again.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Make LinkedIn Great Again.entitlements"; sourceTree = "<group>"; };
+		78416ECB2D86F49D00EE3E32 /* Make Social Media Great Again.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Make Social Media Great Again.entitlements"; sourceTree = "<group>"; };
 		78416ED52D86F49D00EE3E32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		78416EDA2D86F49D00EE3E32 /* Make LinkedIn Great Again Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Make LinkedIn Great Again Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78416EDA2D86F49D00EE3E32 /* Make Social Media Great Again Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Make Social Media Great Again Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78416EDF2D86F49D00EE3E32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		78416EE02D86F49D00EE3E32 /* Make LinkedIn Great Again.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Make LinkedIn Great Again.entitlements"; sourceTree = "<group>"; };
+		78416EE02D86F49D00EE3E32 /* Make Social Media Great Again.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Make Social Media Great Again.entitlements"; sourceTree = "<group>"; };
 		78416F002D86F49D00EE3E32 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = index.html; path = ../../../dist/index.html; sourceTree = "<group>"; };
 		78416F012D86F49D00EE3E32 /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = script.js; path = ../../../dist/script.js; sourceTree = "<group>"; };
 		78416F022D86F49D00EE3E32 /* style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = style.css; path = ../../../dist/style.css; sourceTree = "<group>"; };
@@ -143,8 +143,8 @@
 		78416EB22D86F49D00EE3E32 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				78416EC32D86F49D00EE3E32 /* Make LinkedIn Great Again.app */,
-				78416EDA2D86F49D00EE3E32 /* Make LinkedIn Great Again Extension.appex */,
+				78416EC32D86F49D00EE3E32 /* Make Social Media Great Again.app */,
+				78416EDA2D86F49D00EE3E32 /* Make Social Media Great Again Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,7 +167,7 @@
 				78416EC52D86F49D00EE3E32 /* AppDelegate.swift */,
 				78416EC72D86F49D00EE3E32 /* Main.storyboard */,
 				78416ECA2D86F49D00EE3E32 /* Info.plist */,
-				78416ECB2D86F49D00EE3E32 /* Make LinkedIn Great Again.entitlements */,
+				78416ECB2D86F49D00EE3E32 /* Make Social Media Great Again.entitlements */,
 			);
 			path = "macOS (App)";
 			sourceTree = "<group>";
@@ -184,7 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				78416EDF2D86F49D00EE3E32 /* Info.plist */,
-				78416EE02D86F49D00EE3E32 /* Make LinkedIn Great Again.entitlements */,
+				78416EE02D86F49D00EE3E32 /* Make Social Media Great Again.entitlements */,
 			);
 			path = "macOS (Extension)";
 			sourceTree = "<group>";
@@ -206,9 +206,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		78416EC22D86F49D00EE3E32 /* Make LinkedIn Great Again (macOS) */ = {
+		78416EC22D86F49D00EE3E32 /* Make Social Media Great Again (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 78416EFC2D86F49D00EE3E32 /* Build configuration list for PBXNativeTarget "Make LinkedIn Great Again (macOS)" */;
+			buildConfigurationList = 78416EFC2D86F49D00EE3E32 /* Build configuration list for PBXNativeTarget "Make Social Media Great Again (macOS)" */;
 			buildPhases = (
 				78416EBF2D86F49D00EE3E32 /* Sources */,
 				78416EC02D86F49D00EE3E32 /* Frameworks */,
@@ -220,16 +220,16 @@
 			dependencies = (
 				78416EDD2D86F49D00EE3E32 /* PBXTargetDependency */,
 			);
-			name = "Make LinkedIn Great Again (macOS)";
+			name = "Make Social Media Great Again (macOS)";
 			packageProductDependencies = (
 			);
-			productName = "Make LinkedIn Great Again (macOS)";
-			productReference = 78416EC32D86F49D00EE3E32 /* Make LinkedIn Great Again.app */;
+			productName = "Make Social Media Great Again (macOS)";
+			productReference = 78416EC32D86F49D00EE3E32 /* Make Social Media Great Again.app */;
 			productType = "com.apple.product-type.application";
 		};
-		78416ED92D86F49D00EE3E32 /* Make LinkedIn Great Again Extension (macOS) */ = {
+		78416ED92D86F49D00EE3E32 /* Make Social Media Great Again Extension (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 78416EF82D86F49D00EE3E32 /* Build configuration list for PBXNativeTarget "Make LinkedIn Great Again Extension (macOS)" */;
+			buildConfigurationList = 78416EF82D86F49D00EE3E32 /* Build configuration list for PBXNativeTarget "Make Social Media Great Again Extension (macOS)" */;
 			buildPhases = (
 				78416ED62D86F49D00EE3E32 /* Sources */,
 				78416ED72D86F49D00EE3E32 /* Frameworks */,
@@ -239,11 +239,11 @@
 			);
 			dependencies = (
 			);
-			name = "Make LinkedIn Great Again Extension (macOS)";
+			name = "Make Social Media Great Again Extension (macOS)";
 			packageProductDependencies = (
 			);
-			productName = "Make LinkedIn Great Again Extension (macOS)";
-			productReference = 78416EDA2D86F49D00EE3E32 /* Make LinkedIn Great Again Extension.appex */;
+			productName = "Make Social Media Great Again Extension (macOS)";
+			productReference = 78416EDA2D86F49D00EE3E32 /* Make Social Media Great Again Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -278,8 +278,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				78416EC22D86F49D00EE3E32 /* Make LinkedIn Great Again (macOS) */,
-				78416ED92D86F49D00EE3E32 /* Make LinkedIn Great Again Extension (macOS) */,
+				78416EC22D86F49D00EE3E32 /* Make Social Media Great Again (macOS) */,
+				78416ED92D86F49D00EE3E32 /* Make Social Media Great Again Extension (macOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -336,7 +336,7 @@
 /* Begin PBXTargetDependency section */
 		78416EDD2D86F49D00EE3E32 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 78416ED92D86F49D00EE3E32 /* Make LinkedIn Great Again Extension (macOS) */;
+			target = 78416ED92D86F49D00EE3E32 /* Make Social Media Great Again Extension (macOS) */;
 			targetProxy = 78416EDC2D86F49D00EE3E32 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -494,14 +494,14 @@
 		78416EF92D86F49D00EE3E32 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/Make LinkedIn Great Again.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/Make Social Media Great Again.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 5YGF2ZCSP3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Make LinkedIn Great Again Extension";
+				INFOPLIST_KEY_CFBundleDisplayName = "Make Social Media Great Again Extension";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -509,13 +509,13 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = robinmanuelthiel.makelinkedingreatagain.Extension;
-				PRODUCT_NAME = "Make LinkedIn Great Again Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = robinmanuelthiel.makesocialmediagreatagain.Extension;
+				PRODUCT_NAME = "Make Social Media Great Again Extension";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -526,14 +526,14 @@
 		78416EFA2D86F49D00EE3E32 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/Make LinkedIn Great Again.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/Make Social Media Great Again.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 5YGF2ZCSP3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Make LinkedIn Great Again Extension";
+				INFOPLIST_KEY_CFBundleDisplayName = "Make Social Media Great Again Extension";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -541,13 +541,13 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = robinmanuelthiel.makelinkedingreatagain.Extension;
-				PRODUCT_NAME = "Make LinkedIn Great Again Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = robinmanuelthiel.makesocialmediagreatagain.Extension;
+				PRODUCT_NAME = "Make Social Media Great Again Extension";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -560,14 +560,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "macOS (App)/Make LinkedIn Great Again.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/Make Social Media Great Again.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 5YGF2ZCSP3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "macOS (App)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Make LinkedIn Great Again";
+				INFOPLIST_KEY_CFBundleDisplayName = "Make Social Media Great Again";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -576,15 +576,15 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
 					"-framework",
 					WebKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = robinmanuelthiel.makelinkedingreatagain;
-				PRODUCT_NAME = "Make LinkedIn Great Again";
+				PRODUCT_BUNDLE_IDENTIFIER = robinmanuelthiel.makesocialmediagreatagain;
+				PRODUCT_NAME = "Make Social Media Great Again";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -596,14 +596,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "macOS (App)/Make LinkedIn Great Again.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/Make Social Media Great Again.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 5YGF2ZCSP3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "macOS (App)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Make LinkedIn Great Again";
+				INFOPLIST_KEY_CFBundleDisplayName = "Make Social Media Great Again";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -612,15 +612,15 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
 					"-framework",
 					WebKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = robinmanuelthiel.makelinkedingreatagain;
-				PRODUCT_NAME = "Make LinkedIn Great Again";
+				PRODUCT_BUNDLE_IDENTIFIER = robinmanuelthiel.makesocialmediagreatagain;
+				PRODUCT_NAME = "Make Social Media Great Again";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -639,7 +639,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		78416EF82D86F49D00EE3E32 /* Build configuration list for PBXNativeTarget "Make LinkedIn Great Again Extension (macOS)" */ = {
+		78416EF82D86F49D00EE3E32 /* Build configuration list for PBXNativeTarget "Make Social Media Great Again Extension (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78416EF92D86F49D00EE3E32 /* Debug */,
@@ -648,7 +648,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		78416EFC2D86F49D00EE3E32 /* Build configuration list for PBXNativeTarget "Make LinkedIn Great Again (macOS)" */ = {
+		78416EFC2D86F49D00EE3E32 /* Build configuration list for PBXNativeTarget "Make Social Media Great Again (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78416EFD2D86F49D00EE3E32 /* Debug */,

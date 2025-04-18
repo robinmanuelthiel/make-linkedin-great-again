@@ -16,7 +16,7 @@ import SafariServices
 typealias PlatformViewController = NSViewController
 #endif
 
-let extensionBundleIdentifier = "robinmanuelthiel.makelinkedingreatagain.Extension"
+let extensionBundleIdentifier = "robinmanuelthiel.makesocialmediagreatagain.Extension"
 
 class ViewController: PlatformViewController, WKNavigationDelegate, WKScriptMessageHandler {
 

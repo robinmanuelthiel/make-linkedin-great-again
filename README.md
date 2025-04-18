@@ -1,6 +1,6 @@
-![Make LinkedIn great again](media/Banner.png)
+![Make Social Media great again](media/Banner.png)
 
-A Browser extension to filter out nonsense LinkedIn posts from the timeline.
+A Browser extension to filter out nonsense social media posts from the timeline.
 
 ## Get it running
 
