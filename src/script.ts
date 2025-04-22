@@ -16,6 +16,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   updateUI(config);
 });
 
+// Hide Buy Me a Coffee button in Safari
+function hideSponsoringInSafari() {
+  if (navigator.userAgent.includes('Safari') && !navigator.userAgent.includes('Chrome')) {
+    const sponsoring = document.getElementById('sponsoring-container');
+    if (sponsoring) sponsoring.style.display = 'none';
+  }
+}
+document.addEventListener('DOMContentLoaded', hideSponsoringInSafari);
+
 // Save configuration when inputs change
 bannedWordsTextarea.addEventListener('input', debounce(saveConfiguration, 500));
 replacementTextInput.addEventListener('input', debounce(saveConfiguration, 500));
