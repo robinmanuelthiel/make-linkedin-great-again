@@ -18,7 +18,7 @@ jobs:
       - name: Install editorconfig-checker
         run: pip install editorconfig-checker
       - name: Check EditorConfig style
-        run: editorconfig-checker
+        run: ec
 
       # Check Commit Messages
       - name: Install pre-commit
