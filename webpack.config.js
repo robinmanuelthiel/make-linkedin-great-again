@@ -5,7 +5,8 @@ module.exports = {
   mode: 'production',
   entry: {
     content: './src/content.ts',
-    script: './src/script.ts'
+    script: './src/script.ts',
+    'filter.test': './src/filter.test.ts'
   },
   output: {
     filename: '[name].js',
@@ -22,7 +23,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: ['.ts', '.js', '.test.ts']
   },
   plugins: [
     new CopyPlugin({

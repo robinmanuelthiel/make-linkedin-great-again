@@ -20,15 +20,14 @@ block_comment_start = /*
 block_comment = *
 block_comment_end = */
 
-# Exception for .provisionprofile files
-[*.provisionprofile]
-trim_trailing_whitespace = false
-insert_final_newline = false
-
-# Exception for .provisionprofile files
-[*.p12]
-trim_trailing_whitespace = false
-insert_final_newline = false
+# Exception for Xcode files
+[*.{provisionprofile,p12,pbxproj,xcworkspace,xcworkspacedata,entitlements,xcuserstate,plist}]
+indent_style = unset
+indent_size = unset
+end_of_line = unset
+charset = unset
+trim_trailing_whitespace = unset
+insert_final_newline = unset
 
 # Exception for .sln files as they reformat themselves
 [*.sln]

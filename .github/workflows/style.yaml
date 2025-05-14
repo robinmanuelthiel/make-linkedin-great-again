@@ -15,10 +15,10 @@ jobs:
           fetch-depth: 0
 
       # Check EditorConfig
-      - name: Install eclint
-        run: sudo npm install -g eclint
+      - name: Install editorconfig-checker
+        run: pip install editorconfig-checker
       - name: Check EditorConfig style
-        run: eclint check $(git ls-files)
+        run: ec
 
       # Check Commit Messages
       - name: Install pre-commit

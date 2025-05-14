@@ -13,7 +13,8 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "watch": "webpack --watch --config webpack.config.js",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "test": "webpack --config webpack.config.js && node dist/filter.test.js"
   },
   "browserslist": {
     "production": [
