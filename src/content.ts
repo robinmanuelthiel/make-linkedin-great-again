@@ -1,4 +1,5 @@
 import { Configuration, DEFAULT_CONFIG } from './types';
+import { getBannedWordPattern } from './filter';
 
 let currentConfig: Configuration = DEFAULT_CONFIG;
 
@@ -32,11 +33,8 @@ function filterPosts() {
 
     // Check if the post contains any banned words
     if (
-      // Only match words that are not part of a larger word and surrounded by a whitespace or beginning/end of string in before or after
-      // Also allow punctuation marks as word boundaries at the end of the word
       currentConfig.bannedWords.some(word => {
-        // Updated pattern to include punctuation marks as word boundaries
-        const pattern = new RegExp(`(^|\\s|["'])${word}(\\s|$|[\\s.,!?;]|\\W)`, 'i');
+        const pattern = getBannedWordPattern(word);
         return pattern.test(postText);
       })
     ) {
@@ -139,8 +137,7 @@ function replaceWithEmoji(post: HTMLElement) {
     const spans = textDiv.querySelectorAll('span');
     spans.forEach(span => {
       currentConfig.bannedWords.forEach(word => {
-        const pattern = new RegExp(`(^|\\s)${word}(\\s|$|[\\s.,!?;]|\\W)`, 'gi');
-        // Replace only the plain text within the span or within child-elements of the span
+        const pattern = getBannedWordPattern(word);
         Array.from(span.childNodes).forEach(node => {
           if (node.nodeType === Node.TEXT_NODE) {
             node.textContent = (node.textContent || '').replace(pattern, ` ${currentConfig.emojiReplacement} `);
